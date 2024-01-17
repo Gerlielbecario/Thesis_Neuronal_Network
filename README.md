@@ -7,6 +7,7 @@ El esquema de trabajo es el siguiente:
 
 1. [Datos Brutos](#Datos-Brutos)
    - [gfs](#gfs)
+   - [gsmap](#gsmap)
 
 
 ### Datos Brutos
@@ -26,8 +27,10 @@ Los datos de gsmap son de tipo dat.gz binario y necesitan ser interpretados. Los
 
     1. gsmap_tool.py : Es un codigo que contiene funciones para operar con estos archivos binarios.
     Poder leerlos y realizar subsets. Solo contiene las funciones. 
+    
     2. test_gsmap.py : Es un codigo que permite graficar estos archivos utilizando funciones de
     gsmap_tool.py
+    
     3. auto_MATRICES_DIARIAS.py: Es un codigo que usando funciones de gsmap_tool permite realizar
     el subset de todos los datos brutos. Se eligio sudamerica, pero podria ser otra region.
 
