@@ -5,10 +5,10 @@ El esquema de trabajo es el siguiente:
 
 ## Índice 
 
-1. [Datos Brutos](#Datos_Brutos)
+1. [Datos Brutos](#Datos-Brutos)
 
 
-### Datos_Brutos
+### Datos Brutos
 Dentro de esta carpeta todo lo realizado es con los datos brutos. Tanto analisis como subsets.
 
 Tenemos 2 carpetas:
