@@ -6,13 +6,21 @@ El esquema de trabajo es el siguiente:
 ## Índice 
 
 1. [Datos Brutos](#Datos-Brutos)
-       1. [gfs][#gfs]
-
+   - [gfs](#gfs)
+1. [Datos Brutos](#Datos-Brutos)
+       - [gfs][#gfs]
 
 ### Datos Brutos
 Dentro de esta carpeta todo lo realizado es con los datos brutos. Tanto analisis como subsets.
 
 Tenemos 2 carpetas:
+
+1. [Sección 1](#seccion-1)
+   - [Subsección A](#subseccion-a)
+   
+   1.2 [Subsección B](#subseccion-b)
+
+
 
 #### [gfs](work/Datos_Brutos/gfs)
 Los datos de gfs tienen una resolucion de 0.25º de grilla y son pronosticos para los proximos 10 dias. O sea que cada archivo tiene 10 pronosticos. Son archivos de tipo grib. Los mismos no se encuentran en esta carpeta pero todo lo referido a ellos si.
