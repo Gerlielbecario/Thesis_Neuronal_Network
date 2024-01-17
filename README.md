@@ -2,7 +2,7 @@
 All the code that I am using for my MSc thesis
 
 
-1. [algo](#work/Datos_Brutos)
+1. [algo](work/Datos_Brutos)
 
 
 El esquema de trabajo es el siguiente:
