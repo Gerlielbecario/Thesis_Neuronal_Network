@@ -3,9 +3,12 @@ All the code that I am using for my MSc thesis
 
 El esquema de trabajo es el siguiente:
 
-1. [Datos Brutos](work/Datos_Brutos)
+## Índice 
+
+1. [Datos Brutos](#Datos_Brutos)
 
 
+### Datos_Brutos
 Dentro de esta carpeta todo lo realizado es con los datos brutos. Tanto analisis como subsets.
 
 Tenemos 2 carpetas:
