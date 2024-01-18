@@ -12,7 +12,7 @@ from scipy.interpolate import interp2d
 folder_gsmap = '/home/fernando.huaranca/datosmunin3/Gsmap_24hs'
 
 #Un archivo random
-file_gsmap = '01-01-2000.npz'
+file_gsmap = 'Gsmap_R0.1_24hs_2000-01-04.npz'
 
 #Path
 path_gsmap = os.path.join(folder_gsmap,file_gsmap)
