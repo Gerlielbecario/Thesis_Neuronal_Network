@@ -47,7 +47,7 @@ Los datos de gsmap son de tipo dat.gz binario y necesitan ser interpretados. Los
    En esta carpeta se hallan codigos y lo referido a la interpolacion de archivos gfs:
 
       1.  interpolacion.py : Codigo nuevo para mostrarle a juan donde irian las modificaciones de la interpolacion de gsmap junto con la nueva
-   interpolacion lineal
+      interpolacion lineal
 
    
    
