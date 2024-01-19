@@ -29,23 +29,25 @@ Los datos de gfs tienen una resolucion de 0.25º de grilla y son pronosticos par
 
 Los datos de gsmap son de tipo dat.gz binario y necesitan ser interpretados. Los mismos no se hayan dentro de esta carpeta. Tienen una resolucion de 0.1º.
 
-    1. gsmap_tool.py : Es un codigo que contiene funciones para operar con estos archivos binarios.
-    Poder leerlos y realizar subsets. Solo contiene las funciones. 
+      1. gsmap_tool.py : Es un codigo que contiene funciones para operar con estos archivos binarios.
+      Poder leerlos y realizar subsets. Solo contiene las funciones. 
     
-    2. test_gsmap.py : Es un codigo que permite graficar estos archivos utilizando funciones de
-    gsmap_tool.py
+      2. test_gsmap.py : Es un codigo que permite graficar estos archivos utilizando funciones de gsmap_tool.py
     
-    3. auto_MATRICES_DIARIAS.py: Es un codigo que usando funciones de gsmap_tool permite realizar
-    el subset de todos los datos brutos. Se eligio sudamerica, pero podria ser otra region.
+      3. auto_MATRICES_DIARIAS.py: Es un codigo que usando funciones de gsmap_tool permite realizar
+      el subset de todos los datos brutos. Se eligio sudamerica, pero podria ser otra region.
 
    ### [Datos Sudamerica](work/Datos_Sudamerica)
 
-    1. grafica_npz.py : Este es un codigo que devuelve que se halla dentro del archivo a su vez permite seleccionar una seccion para graficar
-   dentro de la delimitada. Devuelve las dimensiones del archivo original y el graficado.
+      1. grafica_npz.py : Este es un codigo que devuelve que se halla dentro del archivo a su vez permite seleccionar una seccion para graficar
+      dentro de la delimitada. Devuelve las dimensiones del archivo original y el graficado.
 
    #### [gfs interpolado](work/Datos_Sudamerica/gfs_interpolado)
 
    En esta carpeta se hallan codigos y lo referido a la interpolacion de archivos gfs:
+
+   1.  interpolacion.py : Codigo nuevo para mostrarle a juan donde irian las modificaciones de la interpolacion de gsmap junto con la nueva
+   interpolacion lineal
 
    
    
