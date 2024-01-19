@@ -10,7 +10,7 @@ El esquema de trabajo es el siguiente:
    - [gsmap](#gsmap)
 
 2. [Datos Sudamerica](#Datos-Sudamerica)
-   - [gsf_interpolado](#gfs_interpolado)
+   - [gsf_interpolado](#gfs-interpolado)
 
 
 
@@ -43,7 +43,7 @@ Los datos de gsmap son de tipo dat.gz binario y necesitan ser interpretados. Los
     1. grafica_npz.py : Este es un codigo que devuelve que se halla dentro del archivo a su vez permite seleccionar una seccion para graficar
    dentro de la delimitada. Devuelve las dimensiones del archivo original y el graficado.
 
-   #### [gfs](work/Datos_Sudamerica/gfs_interpolado)
+   #### [gfs interpolado](work/Datos_Sudamerica/gfs_interpolado)
 
    En esta carpeta se hallan codigos y lo referido a la interpolacion de archivos gfs
 
