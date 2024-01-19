@@ -38,8 +38,7 @@ Los datos de gsmap son de tipo dat.gz binario y necesitan ser interpretados. Los
 
    ### [Datos Sudamerica](work/Datos_Sudamerica)
 
-
-   1. grafica.npz : Este es un codigo que devuelve que se halla dentro del archivo a su vez permite seleccionar una seccion para graficar
+    1. grafica.npz : Este es un codigo que devuelve que se halla dentro del archivo a su vez permite seleccionar una seccion para graficar
    dentro de la delimitada. Devuelve las dimensiones del archivo original y el graficado.
 
 
