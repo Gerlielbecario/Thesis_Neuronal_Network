@@ -38,8 +38,14 @@ Los datos de gsmap son de tipo dat.gz binario y necesitan ser interpretados. Los
 
    ### [Datos Sudamerica](work/Datos_Sudamerica)
 
-    1. grafica.npz : Este es un codigo que devuelve que se halla dentro del archivo a su vez permite seleccionar una seccion para graficar
+    1. grafica_npz.py : Este es un codigo que devuelve que se halla dentro del archivo a su vez permite seleccionar una seccion para graficar
    dentro de la delimitada. Devuelve las dimensiones del archivo original y el graficado.
+
+   #### [gfs](work/Datos_Sudamerica/gfs_interpolado)
+
+   En esta carpeta se hallan codigos y lo referido a la interpolacion de archivos gfs
+
+   
 
 
 
