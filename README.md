@@ -23,7 +23,7 @@ Tenemos 2 carpetas:
 #### [gfs](work/Datos_Brutos/gfs)
 Los datos de gfs tienen una resolucion de 0.25º de grilla y son pronosticos para los proximos 10 dias. O sea que cada archivo tiene 10 pronosticos. Son archivos de tipo grib. Los mismos no se encuentran en esta carpeta pero todo lo referido a ellos si.
 
-    1. extrae_pronostico.py : Es un codigo que se encarga de realizar un subset de los datos brutos. 
+      1. extrae_pronostico.py : Es un codigo que se encarga de realizar un subset de los datos brutos. 
 
 #### [gsmap](work/Datos_Brutos/gsmap)
 
@@ -45,8 +45,9 @@ Los datos de gsmap son de tipo dat.gz binario y necesitan ser interpretados. Los
 
    #### [gfs interpolado](work/Datos_Sudamerica/gfs_interpolado)
 
-   En esta carpeta se hallan codigos y lo referido a la interpolacion de archivos gfs
+   En esta carpeta se hallan codigos y lo referido a la interpolacion de archivos gfs:
 
+   
    
 
 
