@@ -105,12 +105,12 @@ for file in FileS:
             #LATITUDES
 
             lat_index = np.where((lat <=lat_north) & (lat >= lat_south))[0]
-            
+
 
             lat = lat[lat_index]
 
             #LONGITUDES
-            lon_index = np.flatnonzero((lon >= lon_west) & (lon <= lon_east))
+            lon_index = np.where((lon >= lon_west) & (lon <= lon_east))[0]
 
             lon = lon[lon_index]
             
@@ -158,7 +158,10 @@ for file in FileS:
 
         print('Inicio creacion de matriz de pp diaria para: ',fecha_p_24)
 
-        pp = np.sum(var[StepS,lat_index[0]:lat_index[-1]+1,lon_index[0]:lon_index[-1]+1],axis=0)
+        pp = np.sum(var[StepS,
+                        lat_index.min():lat_index.max()+1,
+                        lon_index.min():lon_index.max()+1],
+                        axis=0)
     
         print('Matriz creada correspondiente a',fecha_p_24)
 
