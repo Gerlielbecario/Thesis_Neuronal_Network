@@ -33,7 +33,7 @@ from datetime import datetime
 folder = '/home/fernando.huaranca/datos/DATOS_REFORECAST/apcp_sfc'
 
 #Nombre de la carpeta donde se almacenara los archivos
-folder_output = "/home/fernando.huaranca/datosmunin3/GFS_24hs"
+folder_output = "/home/fernando.huaranca/datosmunin/GFS_24hs"
 
 #Creacion de carpeta si no existe 
 os.makedirs(folder_output, exist_ok=True)
