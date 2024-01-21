@@ -103,14 +103,17 @@ for file in FileS:
 
             #Recorta la seccion de sudamerica o la que se desee
             #LATITUDES
-            lat_index = np.flatnonzero((lat <lat_north) & (lat > lat_south))
+
+            lat_index = np.where((lat <=lat_north) & (lat >= lat_south))[0]
+            
 
             lat = lat[lat_index]
 
             #LONGITUDES
-            lon_index = np.flatnonzero((lon > lon_west) & (lon < lon_east))
+            lon_index = np.flatnonzero((lon >= lon_west) & (lon <= lon_east))
 
             lon = lon[lon_index]
+            
 
             #Shape para la matriz de ceros
             row = lat.shape[0]
