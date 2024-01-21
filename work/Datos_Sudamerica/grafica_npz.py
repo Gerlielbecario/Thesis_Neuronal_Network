@@ -10,7 +10,12 @@ import cartopy.crs as ccrs
 import cartopy.feature as cfeature
 
 #Directorio
-path = '/home/fernando.huaranca/datosmunin3/Gsmap_24hs/Gsmap_R0.1_24hs_2016-01-01.npz'
+
+#gsmap
+#path = '/home/fernando.huaranca/datosmunin3/Gsmap_24hs/Gsmap_R0.1_24hs_2016-01-01.npz'
+
+#gfs
+path = '/home/fernando.huaranca/datosmunin3/GFS_24hs/GFS_R0.25_24hs_2000-01-01.npz'
 
 #Cargamos el archivo
 datos = np.load(path)
@@ -25,8 +30,8 @@ for arreglo in datos.files:
 
 #Extraigo dimensiones de mi archivo
 pp = datos['pp_daily']
-lat = datos['latitudes'] -0.05 #solo para gsmap
-lon = datos['longitudes'] - 0.05 #solo para gsmap
+lat = datos['latitudes'] #-0.05 #solo para gsmap
+lon = datos['longitudes'] #- 0.05 #solo para gsmap
 
 
 ##Seleccion area sudamerica
