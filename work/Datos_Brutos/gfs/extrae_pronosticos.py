@@ -32,6 +32,12 @@ from datetime import datetime
 
 folder = '/home/fernando.huaranca/datos/DATOS_REFORECAST/apcp_sfc'
 
+#Nombre de la carpeta donde se almacenara los archivos
+folder_output = "/home/fernando.huaranca/datosmunin3/GFS_24hs"
+
+#Creacion de carpeta si no existe 
+os.makedirs(folder_output, exist_ok=True)
+
 #Solo lee los archivos que terminan en extension .grib2
 FileS = glob.glob(f'{folder}/*.grib2')
 print('Cantidad de archivos a procesar: ',len(FileS))
@@ -55,7 +61,7 @@ mi_inicio = True
 
 #Latitudes y longitudes (box)
 lat_north = 15
-lat_south = -65
+lat_south = -59
 lon_east = 330
 lon_west = 260
 
@@ -158,7 +164,7 @@ for file in FileS:
         print('Inicia almacenamiento de la matriz: ',fecha_p_24)
 
         # Ruta completa del archivo donde guardar los datos
-        out_path = f'/home/fernando.huaranca/datosmunin3/GFS_24hs/GFS_R0.25_24hs_{fecha_p_24}.npz'
+        out_path = f'{folder_output}/GFS_R0.25_24hs_{fecha_p_24}.npz'
 
         # Guardar los arreglos en el archivo
         np.savez(out_path,pp_daily = pp, latitudes = lat,longitudes = lon,inicio_corrida=ref_time,forecast_24=fecha_p_24)
@@ -187,7 +193,7 @@ print('Generando un csv con los archivos que fallaron en el proceso')
 df = pd.DataFrame({'Archivos': fallidos})
 
 # Guarda el DataFrame en un archivo CSV
-nombre_archivo = "/home/fernando.huaranca/datosmunin3/fallados_GFS.csv"
+nombre_archivo = f'{folder_output}/fallados_GFS.csv'
 df.to_csv(nombre_archivo, index=False)
 
 print('CSV generado')
