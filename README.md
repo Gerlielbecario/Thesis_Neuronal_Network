@@ -34,20 +34,24 @@ Los datos de gsmap son de tipo dat.gz binario y necesitan ser interpretados. Los
     
       2. test_gsmap.py : Es un codigo que permite graficar estos archivos utilizando funciones de gsmap_tool.py
     
-      3. auto_MATRICES_DIARIAS.py: Es un codigo que usando funciones de gsmap_tool permite realizar
-      el subset de todos los datos brutos. Se eligio sudamerica, pero podria ser otra region.
+      3. crea_grilla.py : Es un codigo que lee un archivo GFS que devuelve un npz con los arrays de latitudes y 
+      longitudes para la seccion de sudamerica. En este caso:
+      
+      Latitudes y longitudes (box)
+      lat_north = 15
+      lat_south = -59
+      lon_east = 330
+      lon_west = 260
+
+      4. interp_gsmap_SA.py : Es un codigo que realiza el subset de los datos brutos de Gsmap. A su vez los
+      multiplica por 24 de manera de tener datos diarios en unidades de mm/24hs. Y los interpola a las 
+      dimensiones de 0.25. Usando el archivo creado con crea_grilla.py
 
    ### [Datos Sudamerica](work/Datos_Sudamerica)
 
       1. grafica_npz.py : Este es un codigo que devuelve que se halla dentro del archivo a su vez permite seleccionar una seccion para graficar
       dentro de la delimitada. Devuelve las dimensiones del archivo original y el graficado.
 
-   #### [gfs interpolado](work/Datos_Sudamerica/gfs_interpolado)
-
-   En esta carpeta se hallan codigos y lo referido a la interpolacion de archivos gfs:
-
-      1.  interpolacion.py : Codigo nuevo para mostrarle a juan donde irian las modificaciones de la interpolacion de gsmap junto con la nueva
-      interpolacion lineal
 
    
    
