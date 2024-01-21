@@ -4,13 +4,19 @@ import glob
 import xesmf as xe
 import matplotlib.pyplot as plt
 from datetime import datetime
+import os
+#Nombre de la carpeta donde se almacenara los archivos
+folder_output = "/home/fernando.huaranca/datosmunin/Gsmap_24hs"
+
+#Creacion de carpeta si no existe 
+os.makedirs(folder_output, exist_ok=True)
 
 data_path ='/home/fernando.huaranca/datos/Datos_GSMAP/daily_G_v8'
 
 #Gsmap subset
 lon_min=200.0
 lon_max=340.0
-lat_min=-70.0
+lat_min=-60.0
 lat_max=20.0
 
 
@@ -19,6 +25,8 @@ file_list = glob.glob( data_path + '/gsmap_gauge.*.0.1d.daily.00Z-23Z.v8.0000.0.
 
 #Porcentaje
 total = len(file_list)
+print('Cantidad de archivos a procesar: ',total)
+
 j = 0
 
 
@@ -52,10 +60,14 @@ for ifile , my_file in enumerate( file_list ) :
       interpolator = xe.Regridder( grid_in , grid_out , "conservative")
 
     qpe_gsmap_raw = gsmap.read_gsmap( my_file )
-    qpe_gsmap = qpe_gsmap_raw[ index_lat.min():index_lat.max() , index_lon.min():index_lon.max() ]
+
+    #Matriz bidimensional de precipitaciones diarias lo multiplicamos
+    #por 24 dado que teniamos mm/h
+    qpe_gsmap = qpe_gsmap_raw[ index_lat.min():index_lat.max() , index_lon.min():index_lon.max() ] * 24 #horas
     print( qpe_gsmap.shape , lon_gsmap.shape , lat_gsmap.shape )
 
-    qpe_gsmap_out = interpolator( qpe_gsmap )
+   
+    qpe_gsmap_out = interpolator( qpe_gsmap ) 
 
     #Get the output filename
     nombre = my_file.split('.')[2]
@@ -63,14 +75,10 @@ for ifile , my_file in enumerate( file_list ) :
 
     # Formatear la fecha como YYYY-MM-DD
     nombre = nombre.strftime('%Y-%m-%d')
-    outfile = f'/home/fernando.huaranca/datosmunin3/Gsmap_24hs/Gsmap_R0.25_24hs_{nombre}.npz'
+    outfile = f'{folder_output}/Gsmap_R0.25_24hs_{nombre}.npz'
 
-    np.savez( outfile , qpe_gsmap_out , lon = lon_gfs , lat = lat_gfs ) 
-
-    #plt.figure()
-    #plt.contourf( lon_gfs , lat_gfs ,  qpe_gsmap_out )
-    #plt.figure()
-    #plt.contourf( lon_gsmap , lat_gsmap , qpe_gsmap )
-    #plt.show() 
+    np.savez(outfile ,pp_daily= qpe_gsmap_out, 
+             longitudes = lon_gfs,
+             latitudes = lat_gfs ) 
 
 print('Proceso completado!')
