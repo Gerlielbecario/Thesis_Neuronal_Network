@@ -1,5 +1,8 @@
 import gzip
 import numpy as np
+import xarray as xr
+import xesmf as xe
+
 
 sx=3600  #Number of points in longitude
 sy=1200  #Number of points in latitude
@@ -40,3 +43,11 @@ def read_gsmap_subset( my_file , lon_min , lon_max , lat_min , lat_max ) :
    sqpe_subset=sqpe[ index_lat.min():index_lat.max() , index_lon.min():index_lon.max() ]
 
    return sqpe_subset , lon_subset , lat_subset
+
+
+
+
+
+
+
+
