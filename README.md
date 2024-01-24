@@ -52,7 +52,7 @@ Los datos de gsmap son de tipo dat.gz binario y necesitan ser interpretados. Los
       1. grafica_npz.py : Este es un codigo que devuelve que se halla dentro del archivo a su vez permite seleccionar una seccion para graficar
       dentro de la delimitada. Devuelve las dimensiones del archivo original y el graficado.
 
-      #### [salidas](work/Datos_Sudamerica/salidas)
+   #### [salidas](work/Datos_Sudamerica/salidas)
 
 
 
