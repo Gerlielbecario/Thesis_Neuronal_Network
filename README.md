@@ -10,7 +10,7 @@ El esquema de trabajo es el siguiente:
    - [gsmap](#gsmap)
 
 2. [Datos Sudamerica](#Datos-Sudamerica)
-   - [salidas](#gfs-interpolado)
+   - [salidas](#salidas)
 
 
 
