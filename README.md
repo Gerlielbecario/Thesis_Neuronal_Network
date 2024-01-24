@@ -54,6 +54,8 @@ Los datos de gsmap son de tipo dat.gz binario y necesitan ser interpretados. Los
 
    #### [salidas](work/Datos_Sudamerica/salidas)
 
+   Esta es una carpeta donde se almacenan las salidas del codigo explora_datos
+
 
 
    
