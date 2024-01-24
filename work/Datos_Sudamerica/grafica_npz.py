@@ -15,8 +15,8 @@ import cartopy.feature as cfeature
 #path = '/home/fernando.huaranca/datosmunin3/Gsmap_24hs/Gsmap_R0.1_24hs_2016-01-01.npz'
 
 #gfs
-path = '/home/fernando.huaranca/datosmunin3/GFS_24hs/GFS_R0.25_24hs_2000-01-01.npz'
-
+path = '/home/fernando.huaranca/datosmunin/subset/gfs/2018-01-01.npz'
+print(path)
 #Cargamos el archivo
 datos = np.load(path)
 
@@ -30,8 +30,8 @@ for arreglo in datos.files:
 
 #Extraigo dimensiones de mi archivo
 pp = datos['pp_daily']
-lat = datos['latitudes'] #-0.05 #solo para gsmap
-lon = datos['longitudes'] #- 0.05 #solo para gsmap
+lat = datos['latitudes'] 
+lon = datos['longitudes'] 
 
 
 ##Seleccion area sudamerica
@@ -39,7 +39,7 @@ lon = datos['longitudes'] #- 0.05 #solo para gsmap
 #Latitudes y longitudes (box)
 
 lat_north = 15
-lat_south = -65
+lat_south = -59
 lon_east = 330
 lon_west = 260
 #latitudes
@@ -47,8 +47,7 @@ lat_index = np.flatnonzero((lat <=lat_north) & (lat >= lat_south))
 
 #longitudes
 lon_index = np.flatnonzero((lon >= lon_west) & (lon <= lon_east))
-print('aca ',lat_index[0])
-print('aca ',lat_index[-1])
+
 #Selecciona seccion de sudamerica
 #El +1 se agrega debido a que 
 #matriz[inicio:fin+1,inicio:fin+1]
@@ -60,7 +59,10 @@ lon = lon[lon_index]
 print('Las dimensiones del array son: ',suda.shape)
 
 #Una vez abierto el archivo y extrayendo las dimensiones podemos plotearlo
+print('Latitudes:')
 print(lat)
+print('Longitudes')
+print(lon)
 ############################################################################################
 ################### GRAFICADO ################################################################
 
