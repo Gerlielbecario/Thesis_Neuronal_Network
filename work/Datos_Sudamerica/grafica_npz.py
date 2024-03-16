@@ -15,7 +15,7 @@ import cartopy.feature as cfeature
 #path = '/home/fernando.huaranca/datosmunin3/Gsmap_24hs/Gsmap_R0.1_24hs_2016-01-01.npz'
 
 #gfs
-path = '/home/fernando.huaranca/datosmunin/subset/gfs/2018-01-01.npz'
+path = '/home/fernando.huaranca/datosmunin/subset/gsmap/2018-01-01.npz'
 print(path)
 #Cargamos el archivo
 datos = np.load(path)
