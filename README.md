@@ -10,6 +10,7 @@ El esquema de trabajo es el siguiente:
    - [gsmap](#gsmap)
 
 2. [Datos Sudamerica](#Datos-Sudamerica)
+   - [analisis](#analisis)
    - [salidas](#salidas)
 
 
@@ -47,7 +48,7 @@ Los datos de gsmap son de tipo dat.gz binario y necesitan ser interpretados. Los
       multiplica por 24 de manera de tener datos diarios en unidades de mm/24hs. Y los interpola a las 
       dimensiones de 0.25. Usando el archivo creado con crea_grilla.py
 
-   ### [Datos Sudamerica](work/Datos_Sudamerica)
+   ### [Datos Sudamerica](work/2-Datos_Sudamerica)
 
       1. grafica_npz.py : Este es un codigo que devuelve que se halla dentro del archivo a su vez permite seleccionar una seccion para graficar
       dentro de la delimitada. Devuelve las dimensiones del archivo original y el graficado.
@@ -65,9 +66,11 @@ Los datos de gsmap son de tipo dat.gz binario y necesitan ser interpretados. Los
 
       Dando un shape de 41x41
 
-   #### [salidas](work/Datos_Sudamerica/salidas)
+   #### [salidas](work/2-Datos_Sudamerica/salidas)
 
    Esta es una carpeta donde se almacenan las salidas del codigo explora_datos
+
+   ### [analisis](work/2-Datos_Sudamerica/analisis)
 
 
 
