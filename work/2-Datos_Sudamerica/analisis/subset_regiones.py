@@ -169,11 +169,25 @@ gsmap_medios = np.stack(lista_medios_gsmap,axis=0)
 
 
 #Guardamos los archivos
-outpath_tropical = '/home/fernando.huaranca/datosmunin/regiones_R_025/tropical.npz'
-outpath_medios = '/home/fernando.huaranca/datosmunin/regiones_R_025/medios.npz'
+outpath_tropical = '/home/fernando.huaranca/datosmunin/Regions_R_025_with_grilla/tropical.npz'
+outpath_medios = '/home/fernando.huaranca/datosmunin/Regions_R_025_with_grilla/medios.npz'
 
-np.savez(outpath_tropical,pp_tropical_gfs = gfs_tropical,pp_tropical_gsmap = gsmap_tropical,files=Files)
-np.savez(outpath_medios,pp_medios_gfs = gfs_medios,pp_medios_gsmap = gsmap_medios,files=Files)
+
+#NPZ region tropical
+np.savez(outpath_tropical,
+         pp_tropical_gfs = gfs_tropical,
+         pp_tropical_gsmap = gsmap_tropical,
+         files=Files,
+         LAT=LAT_trop,
+         LONG=LONG_trop)
+
+#NPZ region latitudes medias
+np.savez(outpath_medios,
+         pp_medios_gfs = gfs_medios,
+         pp_medios_gsmap = gsmap_medios,
+         files=Files,
+         LAT=LAT_med,
+         LONG=LONG_med)
 
 
 

@@ -10,6 +10,7 @@ El esquema de trabajo es el siguiente:
    - [gsmap](#gsmap)
 
 2. [Datos Sudamerica](#Datos-Sudamerica)
+   - [analisis](#analisis)
    - [salidas](#salidas)
 
 
@@ -47,7 +48,7 @@ Los datos de gsmap son de tipo dat.gz binario y necesitan ser interpretados. Los
       multiplica por 24 de manera de tener datos diarios en unidades de mm/24hs. Y los interpola a las 
       dimensiones de 0.25. Usando el archivo creado con crea_grilla.py
 
-   ### [Datos Sudamerica](work/Datos_Sudamerica)
+   ### [Datos Sudamerica](work/2-Datos_Sudamerica)
 
       1. grafica_npz.py : Este es un codigo que devuelve que se halla dentro del archivo a su vez permite seleccionar una seccion para graficar
       dentro de la delimitada. Devuelve las dimensiones del archivo original y el graficado.
@@ -65,10 +66,32 @@ Los datos de gsmap son de tipo dat.gz binario y necesitan ser interpretados. Los
 
       Dando un shape de 41x41
 
-   #### [salidas](work/Datos_Sudamerica/salidas)
+   #### [salidas](work/2-Datos_Sudamerica/salidas)
 
    Esta es una carpeta donde se almacenan las salidas del codigo explora_datos
 
+   #### [analisis](work/2-Datos_Sudamerica/analisis)
+
+   Esta es una carpeta donde se almacenan codigos relacionados al analisis de Datos de Sudamerica
+
+      1. periodo_en_comun.py : Es un codigo al que se le da dos listas. Estas contienen los paths de los archivos de cada carpeta.
+      Similar al os.listdir(). El codigo se encarga de encontrar los archivos en comun entre los dos periodos en las listas.
+
+      2. matriz_confusion_periodo.py : Es un codigo que se encarga de realizar la matriz de confusión para los umbrales que se pidan.
+      El formato en que se devuelven la matriz es: En filas lo observado en columnas el modelo.
+         C o.o = TP
+         C o.1 = FN
+         C 1.0 = FP
+         C 1.1 = TN
+
+      Al aplicar un reshapeo a 1d pasa a devolver TP,FN,FP,TN
+
+      3. funcion_ets.py : Es un codigo que toma matrices de confusión tridimensionales. La estructura es la de arriba y en la 3er 
+      dimensión se encuentran los umbrales. Devuelve la métrica Equitable Threat Score (ETS) en una lista. Cada elemento de la lista
+      es el ETS para cada umbral
+
+      
+   
 
 
    
