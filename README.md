@@ -115,6 +115,13 @@ Los datos de gsmap son de tipo dat.gz binario y necesitan ser interpretados. Los
             lat_south_trop = -18
             long_west_trop = 285
             long_east_trop = 320
+
+
+      ----------------------------------------------------------------------
+      7. testeo_recorte_partes.ipynb : es un codigo que quedo medio olvidado, puede servir para hacer ploteos en el futuro
+
+      8. testeo.ipynb : un codigo que quedo medio olvidado, tenia algunas clases que servian para realizar graficos del estilo tablas,
+      dataframe, para ver la cantidad de datos que hay en conjuntos de datos.
       
    
 
