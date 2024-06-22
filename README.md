@@ -99,6 +99,22 @@ Los datos de gsmap son de tipo dat.gz binario y necesitan ser interpretados. Los
       5. lectura_ets.ipynb : Este es un notebook donde podemos plotear los npz que contienen como va evolucionando el ETS para los 
       distintos umbrales de precipitacion. --recordar lo que dijimos en (4) se puede mejroar la lectura de umbrales ya que para la 
       redaccion de la tesis seguramente lo use bastante.
+
+      6. subset_regiones.py : Este es un codigo que se encarga de realizar el subset de los datos interpolados de GFS y Gsmap. (Recordar 
+      los interpolados, o sea si en algun momento queremos subsetear datos de los crudos deberia cambiar el codigo). Genera dos datasets
+      nuevos en formato .npz  . Uno para una region tropical y otro para una region no tropical
+
+            #Area no tropical o de Clima de latitudes medias
+            lat_north_med = -20
+            lat_south_med =  -45
+            long_west_med = 285
+            long_east_med = 320
+
+            #Area Tropical o de Clima de latitudes tropicales
+            lat_north_trop = 7
+            lat_south_trop = -18
+            long_west_trop = 285
+            long_east_trop = 320
       
    
 
