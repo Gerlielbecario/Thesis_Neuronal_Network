@@ -175,6 +175,8 @@ ets_tropicales = ETS(Umbrales,cm_tropical)
 df_fallados = pd.DataFrame({'Archivos':fallidos})
 df_fallados.to_csv('/home/fernando.huaranca/datosmunin/salida_ets/fallados.csv',index=True)
 
+
+#Aca va el outpath de mis npz. Luego cuando plotees tenes que saber donde esta lo que pltoeas
 np.savez('/home/fernando.huaranca/datosmunin/salida_ets/ets_medios.npz',ETS = ets_medios)
 np.savez('/home/fernando.huaranca/datosmunin/salida_ets/ets_tropical.npz',ETS = ets_tropicales)
 
