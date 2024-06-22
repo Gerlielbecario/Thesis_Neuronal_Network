@@ -55,8 +55,8 @@ Los datos de gsmap son de tipo dat.gz binario y necesitan ser interpretados. Los
 
       2. explora_datos.ipynb :Es un notebook con una clase que permite realizar graficos em formato de tabla de nuestros datos rapidamente
 
-      3. subset.ipynb: Es un notebook que permite realizar el subset de los datos de la region de sudamerica. De manera de obtener npz mas 
-      pequeños. En este caso se tomo:
+      3. subset.ipynb: (Quedo medio viejo pero era para subsetear algunos dias de verano, no se usa)Es un notebook que permite realizar el 
+      subset de los datos de la region de sudamerica. De manera de obtener npz mas pequeños. En este caso se tomo:
 
       #Region para el subset
       lat_north = -10
