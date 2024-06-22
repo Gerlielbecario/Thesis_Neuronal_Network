@@ -90,6 +90,10 @@ Los datos de gsmap son de tipo dat.gz binario y necesitan ser interpretados. Los
       dimensión se encuentran los umbrales. Devuelve la métrica Equitable Threat Score (ETS) en una lista. Cada elemento de la lista
       es el ETS para cada umbral
 
+      4. calculo_ets.py : Este es un codigo que realiza un subset de los datos ya interpolados de GFS y Gsmap. Realiza un subset
+      de una región tropical y una región no tropical para evaluar el ETS de cada una de las regiones, para distintos umbrales. 
+      De esta manera el output son dos listas o arrays, uno para cada region , con el largo de la cantidad de umbrales que se le pidio,
+      y en cada elemento el ETS(umbral). ---Podria mejorarse el codigo ya que cree los stacks.
       
    
 
