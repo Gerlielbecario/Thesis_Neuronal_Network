@@ -93,7 +93,12 @@ Los datos de gsmap son de tipo dat.gz binario y necesitan ser interpretados. Los
       4. calculo_ets.py : Este es un codigo que realiza un subset de los datos ya interpolados de GFS y Gsmap. Realiza un subset
       de una región tropical y una región no tropical para evaluar el ETS de cada una de las regiones, para distintos umbrales. 
       De esta manera el output son dos listas o arrays, uno para cada region , con el largo de la cantidad de umbrales que se le pidio,
-      y en cada elemento el ETS(umbral). ---Podria mejorarse el codigo ya que cree los stacks.
+      y en cada elemento el ETS(umbral). ---Podria mejorarse el codigo ya que cree los stacks. Tambien podria agregarse que exporte los
+      umbrales, asi es mas sencilla la lectura 
+
+      5. lectura_ets.ipynb : Este es un notebook donde podemos plotear los npz que contienen como va evolucionando el ETS para los 
+      distintos umbrales de precipitacion. --recordar lo que dijimos en (4) se puede mejroar la lectura de umbrales ya que para la 
+      redaccion de la tesis seguramente lo use bastante.
       
    
 
