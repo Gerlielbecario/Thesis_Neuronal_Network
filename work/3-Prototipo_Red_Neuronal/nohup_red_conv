@@ -1,0 +1,29 @@
+acaa 
+Traceback (most recent call last):
+  File "/home/fernando.huaranca/datosmunin2/Thesis_Neuronal_Network/work/3-Prototipo_Red_Neuronal/extenso.py", line 10, in <module>
+    import set_dataset as ds
+  File "/datosmunin2/fernando.huaranca/Thesis_Neuronal_Network/work/3-Prototipo_Red_Neuronal/set_dataset.py", line 1, in <module>
+    from sklearn.model_selection import train_test_split
+  File "/home/fernando.huaranca/.conda/envs/tesis/lib/python3.10/site-packages/sklearn/__init__.py", line 83, in <module>
+    from .base import clone
+  File "/home/fernando.huaranca/.conda/envs/tesis/lib/python3.10/site-packages/sklearn/base.py", line 19, in <module>
+    from .utils import _IS_32BIT
+  File "/home/fernando.huaranca/.conda/envs/tesis/lib/python3.10/site-packages/sklearn/utils/__init__.py", line 22, in <module>
+    from ._param_validation import Interval, validate_params
+  File "/home/fernando.huaranca/.conda/envs/tesis/lib/python3.10/site-packages/sklearn/utils/_param_validation.py", line 15, in <module>
+    from .validation import _is_arraylike_not_scalar
+  File "/home/fernando.huaranca/.conda/envs/tesis/lib/python3.10/site-packages/sklearn/utils/validation.py", line 28, in <module>
+    from ..utils._array_api import _asarray_with_order, _is_numpy_namespace, get_namespace
+  File "/home/fernando.huaranca/.conda/envs/tesis/lib/python3.10/site-packages/sklearn/utils/_array_api.py", line 9, in <module>
+    from .fixes import parse_version
+  File "/home/fernando.huaranca/.conda/envs/tesis/lib/python3.10/site-packages/sklearn/utils/fixes.py", line 18, in <module>
+    import scipy.stats
+  File "/home/fernando.huaranca/.conda/envs/tesis/lib/python3.10/site-packages/scipy/stats/__init__.py", line 608, in <module>
+    from ._stats_py import *
+  File "/home/fernando.huaranca/.conda/envs/tesis/lib/python3.10/site-packages/scipy/stats/_stats_py.py", line 39, in <module>
+    from scipy.spatial.distance import cdist
+  File "/home/fernando.huaranca/.conda/envs/tesis/lib/python3.10/site-packages/scipy/spatial/__init__.py", line 110, in <module>
+    from ._kdtree import *
+  File "/home/fernando.huaranca/.conda/envs/tesis/lib/python3.10/site-packages/scipy/spatial/_kdtree.py", line 4, in <module>
+    from ._ckdtree import cKDTree, cKDTreeNode
+ImportError: /usr/lib/x86_64-linux-gnu/libstdc++.so.6: version `GLIBCXX_3.4.29' not found (required by /home/fernando.huaranca/.conda/envs/tesis/lib/python3.10/site-packages/scipy/spatial/_ckdtree.cpython-310-x86_64-linux-gnu.so)

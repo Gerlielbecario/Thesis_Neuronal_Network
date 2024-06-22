@@ -13,3 +13,4 @@ def corr_P( modeldata , targetdata ) :
 
 def corr_S( modeldata , targetdata ) :    
     return spearmanr( modeldata.flatten() , targetdata.flatten() )[0]
+
