@@ -4,7 +4,7 @@
 #correspondientes a 6hs 12hs 18hs y 24hs, y se los suma obteniendo
 #el pronostico de pp acumulada de nuestro grib para las primeras
 #24 hs. El nombre que recibira el archivo sera el de 
-#la fecha de nuestro grib +24 hs en formato DD-MM-YYYY
+#la fecha de nuestro grib en formato DD-MM-YYYY
 
 #----------------------------------------------------
 #Los npz seran arrays de tipo:
