@@ -1,10 +1,10 @@
 # Ignorar carpetas
 
 # salidas de los entrenamientos
-work/5-Salidas/
+work/Salidas/
 
 # análisis y gráficos de los entrenamientos
-work/6-Resultados/
+work/Resultados/
 
 # otros
 work/data/
@@ -16,5 +16,5 @@ work/versionvieja/
 nohup*
 
 # Ignorar archivos .ipynb y .csv en work/4-Experimentos/
-work/4-Experimentos/**/*.ipynb
-work/4-Experimentos/**/*.csv
+work/Experimentos/**/*.ipynb
+work/Experimentos/**/*.csv

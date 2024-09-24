@@ -23,7 +23,7 @@ TrainConf = dc.TrainConf #Get default configuration.
 
 #-----Inputs---
 TrainConf['DataPath'] ="/home/fernando.huaranca/datosmunin/regiones_R_025/medios.npz"
-TrainConf['OutPath']  = "/home/fernando.huaranca/datosmunin2/Thesis_Neuronal_Network/work/5-Salidas/23sep_salidas/"
+TrainConf['OutPath']  = "/home/fernando.huaranca/datosmunin2/Thesis_Neuronal_Network/work/Salidas/24sep_salidas/"
 
 #Exp type
 
@@ -34,17 +34,17 @@ TrainConf['ExpName']    = 'MULTI-ENCODECO'
 ## Parameters to be tested >
 TestParameters = dict()
 RandomSeed   = [1029]  #As many random seed as initailization experiments we want to perform.
-TestParameters['BatchSize'] = [70,100]         #As many batch sizes as we want to test
-TestParameters['LearningRate'] = [ 1.0e-4 ,1.0e-2 ]  #As many learning rates as we want to test
-TestParameters['WeightDecay']  = [1.0e-5 , 1.0e-7 ]     #As many Weight decay rates as we want to test
+TestParameters['BatchSize'] = [100]         #As many batch sizes as we want to test
+TestParameters['LearningRate'] = [ 1.0e-4]  #As many learning rates as we want to test
+TestParameters['WeightDecay']  = [ 1.0e-7 ]     #As many Weight decay rates as we want to test
 TestParameters['KernelSize']   = [3 ]
-TestParameters['Pool']         = [2 , 3 ]
-TestParameters['Bias']         = [False,True]
+TestParameters['Pool']         = [2  ]
+TestParameters['Bias']         = [False]
 TestParameters['OutActivation']= ['Identity']#,'SiLU']
-TestParameters['Channels']     = [  [1,32,32,64,128,256,128,64,32,1],[1,64,64,128,256,512,256,128,64,1] ]
+TestParameters['Channels']     = [  [1,64,64,128,256,512,256,128,64,1] ]
 
 #Esto lo estoy probando yo. Es el numero al que multiplica el lr a partir de la epoca 20.
-TestParameters['Gamma'] = [0.1,0.01]
+#TestParameters['Gamma'] = [0.1,0.01]
 #TrainConf['MaxEpochs']= 1
 
 #Build the base configuration 
