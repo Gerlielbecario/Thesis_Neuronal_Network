@@ -3,18 +3,30 @@ import plots
 import models
 import set_dataset as ds
 import pickle
+from datetime import datetime
 import train_utils as tu
 import os
 import default_conf as dc
 import copy
 import multiprocessing as mp
 
-os.environ['OMP_NUM_THREADS']="2"
-max_proc=8
+inicio_script = datetime.now()
+print('Hora de inicio del script: ',inicio_script,'   UTC')
+
+#Cuantos procesadores esta usando
+os.environ['OMP_NUM_THREADS']="4"
+
+#Cuantos experimentos esta haciendo a la vez
+max_proc=2
 
 TrainConf = dc.TrainConf #Get default configuration.
 
+#-----Inputs---
+TrainConf['DataPath'] ="/home/fernando.huaranca/datosmunin/regiones_R_025/medios.npz"
+TrainConf['OutPath']  = "/home/fernando.huaranca/datosmunin2/Thesis_Neuronal_Network/work/5-Salidas/23sep_salidas/"
+
 #Exp type
+
 TrainConf['ModelClass'] = models.EncoderDecoder  #Determino el modelo a utilizar.
 TrainConf['ExpName']    = 'MULTI-ENCODECO'
 
@@ -22,15 +34,17 @@ TrainConf['ExpName']    = 'MULTI-ENCODECO'
 ## Parameters to be tested >
 TestParameters = dict()
 RandomSeed   = [1029]  #As many random seed as initailization experiments we want to perform.
-TestParameters['BatchSize'] = [100 , 10 , 500 , 1000]         #As many batch sizes as we want to test
-TestParameters['LearningRate'] = [1.0e-3 , 1.0e-4 , 1.0e-5 ]  #As many learning rates as we want to test
-TestParameters['WeigthDecay']  = [1.0e-5 , 1.0e-6 , 0.0 ]     #As many Weight decay rates as we want to test
-TestParameters['KernelSize']   = [3 , 5 , 7 , 9]
+TestParameters['BatchSize'] = [70,100]         #As many batch sizes as we want to test
+TestParameters['LearningRate'] = [ 1.0e-4 ,1.0e-2 ]  #As many learning rates as we want to test
+TestParameters['WeightDecay']  = [1.0e-5 , 1.0e-7 ]     #As many Weight decay rates as we want to test
+TestParameters['KernelSize']   = [3 ]
 TestParameters['Pool']         = [2 , 3 ]
-TestParameters['Bias']         = [True,False]
-TestParameters['OutActivation']= ['Identity','SiLU']
-TestParameters['Channels']     = [ [1,16,16,32,64,128,64,32,16,1] , [1,8,8,16,32,64,32,16,8,1] , [1,32,32,64,128,256,128,64,32,1]  ]
+TestParameters['Bias']         = [False,True]
+TestParameters['OutActivation']= ['Identity']#,'SiLU']
+TestParameters['Channels']     = [  [1,32,32,64,128,256,128,64,32,1],[1,64,64,128,256,512,256,128,64,1] ]
 
+#Esto lo estoy probando yo. Es el numero al que multiplica el lr a partir de la epoca 20.
+TestParameters['Gamma'] = [0.1,0.01]
 #TrainConf['MaxEpochs']= 1
 
 #Build the base configuration 
@@ -77,5 +91,18 @@ pool.map( tu.meta_model_train , TrainConfList )
 
 pool.close()
 
+#------
+fin_script = datetime.now()
+print('Hora de final del script: ',fin_script,'  UTC')
 
+print('.')
+dif = fin_script - inicio_script
+
+delta_horas = dif.total_seconds()/3600
+
+print('El tiempo de ejecucion fue de: ',delta_horas,' horas.')
+print('.')
+print('.')
+print('Proceso Completado!')
+    
 

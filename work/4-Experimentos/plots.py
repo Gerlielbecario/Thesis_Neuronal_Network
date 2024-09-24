@@ -193,7 +193,7 @@ def Mean_plot( Dir_plot, Input , Target , Modelo, Experimento, Input_name, Targe
 def plot_scores(Dir_plot, RMSE, BIAS, Corr_P, Corr_S, max_epochs):
 
     fig = plt.figure(figsize=(7,7))
-    plt.suptitle("Metricas en funcion de la epoca - Validacion")
+    plt.suptitle("Metricas en funcion de la epoca - Validacion -- Desnormalizado")
         
     plt.subplot(2,2,1)
     plt.title("RMSE")
@@ -360,15 +360,17 @@ def PlotModelStats( Stats , OutPath )  :
     max_epochs = len( Stats['RMSE'] )
     
     fig = plt.figure(figsize=(7,7))
-    plt.suptitle("Metricas en funcion de la epoca - Validacion")
+    plt.suptitle("Metricas en funcion de la epoca - Validacion (DESNORMALIZADO)")
             
     plt.subplot(2,2,1)
     plt.title("RMSE")
+    plt.ylabel('mm/day')
     plt.plot(range(max_epochs), Stats['RMSE'] ,color="red")
     plt.grid()
 
     plt.subplot(2,2,2)
     plt.title("BIAS")
+    plt.ylabel('mm/day')
     plt.plot(range(max_epochs), Stats['BIAS'] , color="orange")
     plt.grid()
 
@@ -390,7 +392,7 @@ def PlotModelStats( Stats , OutPath )  :
     plt.close()
     
     fig = plt.figure(figsize=(7,7))
-    plt.suptitle("Metricas en funcion de la epoca - Validacion")
+    plt.suptitle("Metricas en funcion de la epoca - Validacion (Normalizado)")
             
     plt.title("Loss")
     plt.plot(range(max_epochs), Stats['LossVal'] ,color="red" , label='Val')

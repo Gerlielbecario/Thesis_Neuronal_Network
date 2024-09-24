@@ -5,6 +5,7 @@ import numpy as np
 import verificacion as ver
 import set_dataset as ds
 import pickle
+from datetime import datetime
 import os
 import plots
 import gc
@@ -67,7 +68,7 @@ def trainer( TrainConf , Data ) :
     #recordemos que 
     for epoch in range( TrainConf['MaxEpochs'] ):
         print('Epoca: '+ str(epoch+1) + ' de ' + str( TrainConf['MaxEpochs'] ) )
-
+        print('Hora actual: ',datetime.now())
         #Entrenamiento del modelo        
         model.train()  #Esto le dice al modelo que se comporte en modo entrenamiento.
 
@@ -102,7 +103,7 @@ def trainer( TrainConf , Data ) :
         #Calculamos la loss media sobre todos los minibatches 
         Stats['LossTrain'].append( sum_loss / batch_counter )
     
-        #Calculamos la loss sobre el conjunto de validacion
+        #Calculamos la loss sobre el conjunto de validacion NORMALIZADO
         _ , target_val , output_val = model_eval( model , Data['ValDataSet'] , numpy=False , denorm=False ) 
         Stats['LossVal'].append( Loss( output_val.float() , target_val.float() ).item() )
 
@@ -110,12 +111,13 @@ def trainer( TrainConf , Data ) :
         print('Loss Train: ', str(Stats['LossTrain'][epoch]))
         print('Loss Val:   ', str(Stats['LossVal'][epoch]))
 
-        #Calculamos metricas sobre el conjunto de testing con los datos desnormailzados.
-        _ , target_test , output_test = model_eval( model , Data['TestDataSet'] , numpy=True , denorm = True )
-        Stats['RMSE'].append(  ver.rmse(   output_test , target_test ) )
-        Stats['BIAS'].append(  ver.bias(   output_test , target_test ) )
-        Stats['CorrP'].append( ver.corr_P( output_test , target_test ) )
-        Stats['CorrS'].append( ver.corr_S( output_test , target_test ) )  
+        #Calculamos metricas sobre el conjunto de VALIDACION con los datos DESNORMALIZADOS.
+        _ , target_val , output_val = model_eval( model , Data['ValDataSet'] , numpy=True , denorm = True )
+        Stats['RMSE'].append(  ver.rmse(   output_val , target_val ) )
+        Stats['BIAS'].append(  ver.bias(   output_val , target_val ) )
+        Stats['CorrP'].append( ver.corr_P( output_val , target_val ) )
+        Stats['CorrS'].append( ver.corr_S( output_val , target_val ) )  
+
     
     return model , Stats 
 
