@@ -1,20 +1,20 @@
-#Ignorar carpetas 
+# Ignorar carpetas
 
-#salidas de los entrenamientos
-/work/5-Salidas/ 
+# salidas de los entrenamientos
+work/5-Salidas/
 
-#analisis y graficos de los entrenamientos
-/work/6-Resultados/
+# análisis y gráficos de los entrenamientos
+work/6-Resultados/
 
-#otros
-/work/data/
-/work/Prototipo_1era_Red/
-/work/subset_1er_prueba/
-/work/versionvieja/
+# otros
+work/data/
+work/Prototipo_1era_Red/
+work/subset_1er_prueba/
+work/versionvieja/
 
+# Ignorar archivos que empiezan con 'nohup'
 nohup*
 
-#
-/home/fernando.huaranca/datosmunin2/Thesis_Neuronal_Network/work/4-Experimentos/**.ipynb
-/home/fernando.huaranca/datosmunin2/Thesis_Neuronal_Network/work/4-Experimentos/**.csv
-/home/fernando.huaranca/datosmunin2/Thesis_Neuronal_Network/work/4-Experimentos/**.png
+# Ignorar archivos .ipynb y .csv en work/4-Experimentos/
+work/4-Experimentos/**/*.ipynb
+work/4-Experimentos/**/*.csv
