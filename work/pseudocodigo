@@ -1,0 +1,10 @@
+# Pseudocódigo de entrenamiento (mini-batch gradient descent con Adam y LR decay)
+
+Para cada época en [1, max_epochs]:
+    Para cada mini-batch en los datos de entrenamiento:
+        1. Propagar hacia adelante los datos de entrada en la red
+        2. Calcular la función de costo (MSE)
+        3. Propagar hacia atrás los gradientes
+        4. Actualizar los parámetros con Adam
+    Si aplica LrDecay:
+        - Reducir el learning rate según el scheduler
